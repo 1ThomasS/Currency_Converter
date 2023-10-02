@@ -17,7 +17,7 @@ else:
     to_currency = st.selectbox("To Currency", cur_list)
     
     if st.button("Get Latest Rate"):
-        date, rate = get_latest_rates(from_currency, to_currency, amount)
+        date, rate = get_latest_rates(from_currency, to_currency)
         if date != None and rate != None:
             converted_amount = round_rate(amount * rate)
             inverse_rate = reverse_rate(rate)

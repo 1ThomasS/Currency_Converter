@@ -20,8 +20,8 @@ def get_currencies_list():
         print(f"Error: {str(e)}")
         return None
 
-def get_latest_rates(from_currency, to_currency, amount):
-    url = f"{BASE_URL}/latest?amount={amount}&from={from_currency}&to={to_currency}"
+def get_latest_rates(from_currency, to_currency):
+    url = f"{BASE_URL}/latest?&from={from_currency}&to={to_currency}"
     
     try:
         status_code, response_content = get_url(url)
@@ -39,8 +39,8 @@ def get_latest_rates(from_currency, to_currency, amount):
         print(f"Error: {str(e)}")
         return None, None
 
-def get_historical_rate(from_currency, to_currency, from_date, amount):
-    url = f"{BASE_URL}/{from_date}?amount={amount}&from={from_currency}&to={to_currency}"
+def get_historical_rate(from_currency, to_currency, from_date):
+    url = f"{BASE_URL}/{from_date}?&from={from_currency}&to={to_currency}"
     
     try:
         status_code, response_content = get_url(url)
